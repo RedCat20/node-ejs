@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  padding: 64px 101px 55px 101px;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.main__order {
+  margin-top: 44px;
+}
+
+.order__title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 51px;
+  text-align: center;
+  color: #0094D9;
+  margin-bottom: 30px;
+}
+
+.order__info {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 60px;
+  letter-spacing: -0.005em;
+  color: #333333;
+}
+
+.main__products {
+  margin-top: 44px;
+}

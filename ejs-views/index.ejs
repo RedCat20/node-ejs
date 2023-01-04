@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/x-icon" href="/icon.jpg">
+        <meta charSet="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Verenia</title>
+        <link rel="stylesheet" href="/index.css" type="text/css"/>
+        <link rel="stylesheet" href="/header.css" type="text/css"/>
+        <link rel="stylesheet" href="/table.css" type="text/css"/>
+    </head>
+
+    <body>
+
+        <%- include('./header.ejs') -%>
+
+        <main class="main">
+
+        <div class="main__order order">
+              <div class="order__title">
+                Quote & Customer Information
+              </div>
+
+              <div class="order__info"> </div>
+        </div>
+
+        <div class="main__products products">
+          <table>
+            <thead>
+
+            <tr>
+              <td>Item</td>
+              <td></td>
+              <td>Quantity</td>
+              <td>Unit Price</td>
+            </tr>
+            </thead>
+
+            <tbody> </tbody>
+
+          </table>
+        </div>
+        </main>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+              const orderInfo = document.querySelector('.order__info');
+              orderInfo.innerHTML = `<% if (record) { %>
+                <div><%= record.name %></div>
+                <div>Customer: <%= record.customer %></div>
+                <div>Date: <%= record.date %></div>
+                <% } %>`
+
+              const tbody = document.querySelector('tbody');
+              tbody.insertAdjacentHTML('beforeend', `
+                  <% if (items.length) { %>
+                  <% items.forEach((item) => { %>
+                    <tr style="<%= (Number(item.price.substring(1)) < 100) ? 'background: #f3fff3' : 'background: transparent' %>">
+                      <td>
+                        <h3>
+                            <%= item.name %>
+                        </h3>
+                        <p>
+                            <%= item.description %>
+                        </p>
+                      </td>
+                      <td>
+                        <img alt="Product" src="
+                               <%= item.image %>
+                                ">
+                      </td>
+                      <td>
+                          <%= item.quantity %>
+                      </td>
+                      <td>
+                          <%= item.price %>
+                      </td>
+                    </tr>
+                <% }) %>
+                <% } %>
+              `);
+            });
+        </script>
+    </body>
+</html>
