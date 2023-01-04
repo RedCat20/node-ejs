@@ -1,7 +1,9 @@
+/* 1660px x 919px in the layout */
+
 .screen {
-  /* 1660px x 919px in the layout */
   height: 919px;
   position: relative;
+  max-width: 100%;
 }
 
 .screen__bg {
@@ -41,7 +43,12 @@
   text-align: center;
 
   margin: 0 auto;
-  margin-bottom: 81px;
+  margin-bottom: 41px;
+}
+@media screen and (min-width: 992px) {
+  .content__logo {
+    margin-bottom: 81px;
+  }
 }
 
 .content__description {
@@ -55,16 +62,19 @@
 .shadow {
   background: linear-gradient(57.2deg, #0094D9 15.72%, #18CEBD 74.72%);
   opacity: 0.7;
-  width: 874px;
+  /*max-width: 100%;*/
+  /*width: 100%;*/
   position: relative;
   z-index: 1;
   top: 0;
-  left: 210px;
   height: 200px;
+  visibility: hidden;
 }
-@media screen and (max-width: 1199px) {
+@media screen and (min-width: 1200px) {
   .shadow {
-    visibility: hidden;
+    width: 874px;
+    left: 210px;
+    visibility: visible;
   }
 }
 
@@ -84,11 +94,17 @@
     left: calc(50% - 880px / 2);
   }
 }
+@media screen and (max-width: 991px) {
+  .description {
+    position: relative;
+    top: -210px;
+    left: 0;
+  }
+}
 @media screen and (max-width: 767px) {
   .description {
     position: relative;
     top: -210px;
-    left: 30px;
   }
 }
 
@@ -101,19 +117,25 @@
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 42px;
-  line-height: 67px;
+  font-size: 38px;
+  line-height: 62px;
   color: #FFFFFF;
   padding: 20px 39px;
   margin-bottom: 15px;
+}
+@media screen and (min-width: 992px) {
+  .description__text h1 {
+    font-size: 42px;
+    line-height: 67px;
+  }
 }
 
 .description__text p {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 51px;
+  font-size: 27px;
+  line-height: 45px;
   display: flex;
   align-items: center;
   text-align: justify;
@@ -121,6 +143,12 @@
   color: #FFFFFF;
   padding: 24px;
   margin: 0;
+}
+@media screen and (min-width: 992px) {
+  .description__text p {
+    font-size: 30px;
+    line-height: 51px;
+  }
 }
 
 .content__circle {

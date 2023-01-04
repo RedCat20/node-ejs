@@ -8,35 +8,76 @@ html, body {
 }
 
 .main {
-  padding: 64px 101px 55px 101px;
+  position: relative;
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 100%;
+  padding: 64px 0 55px 0;
+}
+
+@media screen and (min-width: 1600px) {
+  .main {
+    max-width: 1600px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main {
+    padding: 64px 101px 55px 101px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main {
+    padding: 64px 32px 55px 32px;
+  }
 }
 
 .main__order {
-  margin-top: 44px;
+  margin-top: 12px;
+  padding: 32px;
+}
+
+@media screen and (min-width: 992px) {
+  .main__order {
+    margin-top: 44px;
+    padding: 0;
+  }
 }
 
 .order__title {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 42px;
-  line-height: 51px;
+  font-size: 32px;
+  line-height: 38px;
   text-align: center;
   color: #0094D9;
   margin-bottom: 30px;
 }
 
+@media screen and (min-width: 992px) {
+  thead td {
+    font-size: 42px;
+    line-height: 51px;
+  }
+}
+
+
 .order__info {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
-  line-height: 60px;
+  font-size: 23px;
+  line-height: 38px;
   letter-spacing: -0.005em;
   color: #333333;
 }
+
+@media screen and (min-width: 992px) {
+  .order__info {
+    font-size: 30px;
+    line-height: 60px;
+  }
+}
+
 
 .main__products {
   margin-top: 44px;

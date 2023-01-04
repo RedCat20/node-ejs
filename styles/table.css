@@ -1,5 +1,15 @@
+.products {
+  max-width: 100%;
+  overflow: auto;
+}
+
 table {
   width: 100%;
+}
+@media screen and (min-width: 1199px) {
+  table {
+    width: auto;
+  }
 }
 
 thead {
@@ -11,7 +21,7 @@ thead td {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 26px;
+  font-size: 22px;
   line-height: 39px;
   text-align: center;
   vertical-align: middle;
@@ -23,24 +33,46 @@ thead td {
   justify-content: center;
   height: 116px;
 }
+@media screen and (min-width: 992px) {
+  thead td {
+    font-size: 26px;
+  }
+}
 
 tr {
   display: grid;
-  grid-template-columns: 3fr 2fr 1fr 2fr;
+  grid-template-columns: 7fr 1fr 3fr 7fr;
   grid-row-gap: 5px;
-  grid-column-gap: 100px;
-
-  padding: 0 93px;
+  grid-column-gap: 32px;
+  padding: 0 32px;
 }
+@media screen and (min-width: 1199px) {
+  tr {
+    padding: 0 93px;
+    grid-column-gap: 100px;
+  }
+}
+@media screen and (min-width: 575px) {
+  tr {
+    grid-template-columns: 3fr 2fr 1fr 2fr;
+  }
+}
+
 
 tbody {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
-  line-height: 45px;
+  font-size: 20px;
+  line-height: 32px;
   letter-spacing: -0.005em;
   color: #333333;
+}
+@media screen and (min-width: 992px) {
+  tbody {
+    font-size: 30px;
+    line-height: 45px;
+  }
 }
 
 tbody tr:not(:last-child) {
@@ -74,5 +106,16 @@ tbody td p {
 }
 
 tbody td img {
-  max-width: 234px;
+  max-width: 150px;
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  tbody td img {
+    max-width: 234px;
+  }
+}
+@media screen and (min-width: 575px) {
+  tbody td img {
+    display: inline-block;
+  }
 }
